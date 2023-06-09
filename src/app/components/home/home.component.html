@@ -1,0 +1,17 @@
+<div class="row p-5" id="cardContainer">
+  <div class="col-3" *ngFor="let movie of movies">
+    <div class="card mb-4">
+      <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="card-img-top" alt="{{movie.title}}">
+      <div class="card-body">
+        <h3 class="card-title text-center">{{movie.title}}</h3>
+        <div class="card-text d-flex justify-content-between align-items-center">
+          <a (click)="likeIt(movie.id, user?.user?.id!)"><img [src]="movieLiked(movie.id) ? '../../../assets/heart-fill-red.svg' : '../../../assets/heart-fill.svg'" alt="heart icon"></a>
+          <div class="text-end">
+            <p>Voto: {{movie.vote_average}}</p>
+            <p>N. Voti: {{movie.vote_count}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

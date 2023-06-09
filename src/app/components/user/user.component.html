@@ -1,0 +1,16 @@
+<div class="container d-flex flex-column justify-content-center mt-4">
+  <div >
+    <div id="userInfo">
+      <h3>Benvenuto sulla tua pagina personale {{user?.user?.name}}</h3>
+      <h5>La tua email: {{user?.user?.email}}</h5>
+      <h5>I miei film preferiti: {{favMovies.length}}</h5>
+    </div>
+    <div *ngFor="let movie of favMovies" id="favMovies" class="d-flex">
+      <p>Titolo: {{movie.title}}.&nbsp;</p>
+      <p>Uscita: {{movie.release_date}}.&nbsp;</p>
+      <p>Voto: {{movie.vote_average}}.&nbsp;</p>
+      <p>Lingua Originale: {{movie.original_language}}.&nbsp;</p>
+      <p>Titolo Originale: {{movie.original_title}}.</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+.card-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#cardContainer {
+  background-image: url(../../../assets/netflix-sfondo.jpg.webp);
+  background-size: contain;
+  background-repeat: repeat-y;
+}
+.card {
+  background-color: black;
+  border: transparent;
+  color: gray;
+}

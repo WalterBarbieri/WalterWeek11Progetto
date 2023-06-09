@@ -1,0 +1,20 @@
+<div>
+  <div class="card mb-3">
+    <div class="card-body">
+      <div class="card-title text-center">
+        <h3> Accedi </h3>
+      </div>
+      <form class="card-text" #form="ngForm" (submit)="accedi(form)">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" class="form-control" required ngModel>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" class="form-control" required ngModel>
+        <div class="d-flex justify-content-between align-items-center">
+          <button type="submit" class="btn mt-2" [disabled]="form.invalid">Login</button>
+          <a class="d-flex justify-content-center curs" (click)="redirectToRegister()">Non hai ancora un account?
+            Registrati</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

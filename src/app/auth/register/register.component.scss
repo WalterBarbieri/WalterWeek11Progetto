@@ -1,0 +1,29 @@
+.card-body {
+
+  color: red;
+}
+.card {
+  border: transparent;
+  background-color: black;
+  width: 150%;
+  margin-top: 2em;
+}
+input {
+  background-color: #211F20;
+  border: #211F20;
+  color: white;
+}
+button {
+  background-color: red;
+  color: black;
+}
+button:disabled {
+  background-color: rgb(247, 57, 57);
+  color: black;
+}
+a {
+  color: red;
+}
+a:hover {
+  cursor: pointer;
+}
