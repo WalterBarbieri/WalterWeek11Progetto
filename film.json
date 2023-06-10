@@ -41,6 +41,12 @@
       "password": "$2a$10$NYeCDMysvI9rIedeFPj6WeL9Oi7j7voa3TE1KB2ylzi0CNRmz61q6",
       "name": "marta splendente",
       "id": 8
+    },
+    {
+      "email": "vino@buono.it",
+      "password": "$2a$10$z5stJZzKpjbzml0LrUT0x.S45tjfhOZDjO70wXRniWFPoNAwaF1Cy",
+      "name": "Solaia",
+      "id": 9
     }
   ],
   "favorites": [
@@ -55,16 +61,6 @@
       "id": 5
     },
     {
-      "userId": 2,
-      "movieId": 460465,
-      "id": 6
-    },
-    {
-      "userId": 2,
-      "movieId": 632357,
-      "id": 8
-    },
-    {
       "userId": 3,
       "movieId": 804435,
       "id": 9
@@ -75,44 +71,9 @@
       "id": 10
     },
     {
-      "movieId": 460465,
-      "userId": 2,
-      "id": 13
-    },
-    {
-      "movieId": 634528,
-      "userId": 2,
-      "id": 14
-    },
-    {
-      "movieId": 460465,
-      "userId": 2,
-      "id": 15
-    },
-    {
-      "movieId": 573680,
-      "userId": 5,
-      "id": 17
-    },
-    {
       "movieId": 586047,
       "userId": 5,
       "id": 18
-    },
-    {
-      "movieId": 567189,
-      "userId": 2,
-      "id": 22
-    },
-    {
-      "movieId": 578701,
-      "userId": 2,
-      "id": 23
-    },
-    {
-      "movieId": 573680,
-      "userId": 2,
-      "id": 24
     },
     {
       "movieId": 634528,
@@ -140,11 +101,6 @@
       "id": 31
     },
     {
-      "movieId": 632357,
-      "userId": 5,
-      "id": 33
-    },
-    {
       "movieId": 615457,
       "userId": 8,
       "id": 35
@@ -155,9 +111,79 @@
       "id": 36
     },
     {
+      "movieId": 578701,
+      "userId": 2,
+      "id": 44
+    },
+    {
+      "movieId": 399566,
+      "userId": 2,
+      "id": 45
+    },
+    {
+      "movieId": 586047,
+      "userId": 2,
+      "id": 46
+    },
+    {
+      "movieId": 527774,
+      "userId": 2,
+      "id": 47
+    },
+    {
+      "movieId": 635302,
+      "userId": 2,
+      "id": 48
+    },
+    {
+      "movieId": 578701,
+      "userId": 8,
+      "id": 49
+    },
+    {
+      "movieId": 586047,
+      "userId": 8,
+      "id": 50
+    },
+    {
+      "movieId": 635302,
+      "userId": 5,
+      "id": 54
+    },
+    {
+      "movieId": 527774,
+      "userId": 5,
+      "id": 55
+    },
+    {
+      "movieId": 632357,
+      "userId": 9,
+      "id": 56
+    },
+    {
+      "movieId": 615457,
+      "userId": 9,
+      "id": 57
+    },
+    {
+      "movieId": 573680,
+      "userId": 5,
+      "id": 67
+    },
+    {
+      "movieId": 615457,
+      "userId": 5,
+      "id": 68
+    },
+    {
+      "movieId": 632357,
+      "userId": 5,
+      "id": 70
+    },
+    {
       "movieId": 567189,
       "userId": 5,
-      "id": 42
+      "id": 71
     }
   ],
   "genres": [
@@ -260,7 +286,7 @@
       "vote_count": 2659
     },
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/fPGeS6jgdLovQAKunNHX8l0avCy.jpg",
       "genre_ids": [
         28,
@@ -280,7 +306,7 @@
       "vote_count": 999
     },
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/iDdpiUnCeXvBmrkBFpL6lKsZt33.jpg",
       "genre_ids": [
         53,
@@ -301,7 +327,7 @@
       "vote_count": 280
     },
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/blk6UPEoaKwlFIEuHWhVEuTQULC.jpg",
       "genre_ids": [
         27
@@ -319,7 +345,7 @@
       "vote_count": 301
     },
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/mYM8x2Atv4MaLulaV0KVJWI1Djv.jpg",
       "genre_ids": [
         28,
@@ -379,7 +405,7 @@
       "vote_count": 1647
     },
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/xrAaJAn3hqkInq5kE1AGJqIGXyT.jpg",
       "genre_ids": [
         27
@@ -480,7 +506,7 @@
       "vote_count": 5544
     },
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/gPKcJzrbgs1670fOeKN1xQH9mNa.jpg",
       "genre_ids": [
         80,
@@ -623,7 +649,7 @@
       "vote_count": 842
     },
     {
-      "adult": false,
+      "adult": true,
       "backdrop_path": "/5Zv5KmgZzdIvXz2KC3n0MyecSNL.jpg",
       "genre_ids": [
         28,

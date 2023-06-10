@@ -11,6 +11,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AuthGuard } from './auth/auth.guard';
 import { UserComponent } from './components/user/user.component';
+import { DetailComponent } from './components/detail/detail.component';
 
 
 const route: Route[] = [
@@ -32,6 +33,11 @@ const route: Route[] = [
     component: UserComponent,
     canActivate: [AuthGuard]
   },
+  {
+    path: 'detail/:id',
+    component: DetailComponent,
+    canActivate: [AuthGuard]
+  }
 ]
 
 @NgModule({
@@ -42,6 +48,7 @@ const route: Route[] = [
     LoginComponent,
     NavbarComponent,
     UserComponent,
+    DetailComponent,
   ],
   imports: [
     BrowserModule,

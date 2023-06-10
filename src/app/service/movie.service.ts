@@ -29,4 +29,8 @@ export class MovieService {
     return this.http.delete(`${this.baseURL}favorites/${id}`)
   }
 
+  recuperaMovie(id: number){
+    return this.http.get<Movie>(`${this.baseURL}movies-popular/${id}`);
+  }
+
 }

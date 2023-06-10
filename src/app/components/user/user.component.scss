@@ -1,14 +1,28 @@
-.container {
+:host {
+  width: 100%;
+}
+
+#cardContainer {
+  background-image: url(../../../assets/netflix-sfondo.jpg.webp);
+  background-size: contain;
+  background-repeat: repeat-y;
   color: red;
-  overflow-x: hidden;
-  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2em;
+}
+.card-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: red;
+}
 
+#userInfo{
+  border-radius: 10px;
+  background: linear-gradient(91deg, black, transparent);
 }
-#userInfo {
-  background-color: black;
+#userCard {
+  cursor: pointer;
 }
-#favMovies {
-  background-color: black;
-  margin: 1em 0;
-}
-
