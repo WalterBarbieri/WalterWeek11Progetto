@@ -16,7 +16,8 @@ import { UserComponent } from './components/user/user.component';
 const route: Route[] = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'login',
@@ -28,7 +29,8 @@ const route: Route[] = [
   },
   {
     path: 'user',
-    component: UserComponent
+    component: UserComponent,
+    canActivate: [AuthGuard]
   },
 ]
 

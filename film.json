@@ -35,6 +35,12 @@
       "password": "$2a$10$cdJoskZzDHvAAFX.e9obvuP36D//f3Y9Ypu1MGjO0ZEqFQtmmiAeO",
       "name": "tanti",
       "id": 7
+    },
+    {
+      "email": "marta@splendore.rt",
+      "password": "$2a$10$NYeCDMysvI9rIedeFPj6WeL9Oi7j7voa3TE1KB2ylzi0CNRmz61q6",
+      "name": "marta splendente",
+      "id": 8
     }
   ],
   "favorites": [
@@ -94,21 +100,6 @@
       "id": 18
     },
     {
-      "movieId": 503736,
-      "userId": 5,
-      "id": 19
-    },
-    {
-      "movieId": 460465,
-      "userId": 5,
-      "id": 20
-    },
-    {
-      "movieId": 804435,
-      "userId": 5,
-      "id": 21
-    },
-    {
       "movieId": 567189,
       "userId": 2,
       "id": 22
@@ -127,11 +118,6 @@
       "movieId": 634528,
       "userId": 5,
       "id": 25
-    },
-    {
-      "movieId": 615457,
-      "userId": 5,
-      "id": 26
     },
     {
       "movieId": 726684,
@@ -156,12 +142,22 @@
     {
       "movieId": 632357,
       "userId": 5,
-      "id": 32
+      "id": 33
     },
     {
-      "movieId": 632357,
+      "movieId": 615457,
+      "userId": 8,
+      "id": 35
+    },
+    {
+      "movieId": 717192,
+      "userId": 8,
+      "id": 36
+    },
+    {
+      "movieId": 567189,
       "userId": 5,
-      "id": 33
+      "id": 42
     }
   ],
   "genres": [
