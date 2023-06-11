@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   movies: Movie[] | undefined;
   favMovie!: Favourite | null;
   myFavMov: Favourite[] | undefined;
+  favSub!: Subscription;
 
   constructor(private authSrv: AuthService, private movieSrv: MovieService) {}
 
@@ -30,7 +31,7 @@ export class HomeComponent implements OnInit {
       console.log(this.movies);
     });
 
-    this.sub = this.movieSrv
+    this.favSub = this.movieSrv
       .recuperaFav(this.user?.user?.id!)
       .subscribe((myFavMov: Favourite[]) => {
         this.myFavMov = myFavMov;
@@ -46,24 +47,30 @@ export class HomeComponent implements OnInit {
       userId: userId,
       id: favMovieId
     };
-    console.log(this.favMovie);
-    console.log(favMovieId);
-
-
 
     if (alreadyLiked) {
       if (this.favMovie.id !== undefined) {
-      this.movieSrv.eliminaFav(this.favMovie.id).subscribe(() => {
-        this.myFavMov = this.myFavMov?.filter(fav => fav.movieId !== movieId);
-      })};
+        this.movieSrv.eliminaFav(this.favMovie.id).subscribe(() => {
+          this.myFavMov = this.myFavMov?.filter(fav => fav.movieId !== movieId);
+        });
+      }
     } else {
-      this.movieSrv.miPiace(this.favMovie).subscribe(() => {
-        this.myFavMov?.push(this.favMovie!);
+      this.movieSrv.miPiace(this.favMovie).subscribe((newFavMovie: Favourite) => {
+        this.myFavMov?.push(newFavMovie);
       });
     }
   }
 
   movieLiked(movieId: number): boolean {
     return this.myFavMov?.some((fav) => fav.movieId === movieId) || false;
+  }
+
+  ngOnDestroy(): void {
+    if (this.sub) {
+      this.sub.unsubscribe();
+    }
+    if (this.favSub) {
+      this.favSub.unsubscribe();
+    }
   }
 }

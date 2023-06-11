@@ -9,7 +9,7 @@
         <h3 class="card-title text-center">{{movie.title}}</h3>
       </a>
         <div class="card-text d-flex justify-content-between align-items-center">
-          <a (click)="likeIt(movie.id, user?.user?.id!)"><img [src]="movieLiked(movie.id) ? '../../../assets/heart-fill-red.svg' : '../../../assets/heart-fill.svg'" alt="heart icon"></a>
+          <a (click)="likeIt(movie.id, user?.user?.id!)" id="heartIcon"><img [src]="movieLiked(movie.id) ? '../../../assets/heart-fill-red.svg' : '../../../assets/heart-fill.svg'" alt="heart icon"></a>
           <div class="text-end">
             <p>Voto: {{movie.vote_average}}</p>
             <p>N. Voti: {{movie.vote_count}}</p>
