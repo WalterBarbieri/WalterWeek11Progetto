@@ -47,6 +47,18 @@
       "password": "$2a$10$z5stJZzKpjbzml0LrUT0x.S45tjfhOZDjO70wXRniWFPoNAwaF1Cy",
       "name": "Solaia",
       "id": 9
+    },
+    {
+      "email": "laghetto@laghetto.it",
+      "password": "$2a$10$Ctpr9bmzz7QlM/8YpS5F3upsyuVh38YKpk9M2Spsbr4uAruH9wEEC",
+      "name": "chat",
+      "id": 10
+    },
+    {
+      "email": "giuse@giuse.it",
+      "password": "$2a$10$T52iWtt60/ll9c8R.YnNjO2A5YI/b0YzIHrz/D14JWDPuaXwx3kuy",
+      "name": "giuse",
+      "id": 11
     }
   ],
   "favorites": [
@@ -161,11 +173,6 @@
       "id": 67
     },
     {
-      "movieId": 615457,
-      "userId": 5,
-      "id": 68
-    },
-    {
       "movieId": 634528,
       "userId": 5,
       "id": 72
@@ -214,6 +221,96 @@
       "movieId": 791373,
       "userId": 9,
       "id": 82
+    },
+    {
+      "movieId": 503736,
+      "userId": 10,
+      "id": 83
+    },
+    {
+      "movieId": 813258,
+      "userId": 10,
+      "id": 84
+    },
+    {
+      "movieId": 811367,
+      "userId": 10,
+      "id": 85
+    },
+    {
+      "movieId": 635302,
+      "userId": 10,
+      "id": 86
+    },
+    {
+      "movieId": 804435,
+      "userId": 10,
+      "id": 87
+    },
+    {
+      "movieId": 578701,
+      "userId": 10,
+      "id": 88
+    },
+    {
+      "movieId": 460465,
+      "userId": 10,
+      "id": 89
+    },
+    {
+      "movieId": 573680,
+      "userId": 10,
+      "id": 90
+    },
+    {
+      "movieId": 726684,
+      "userId": 11,
+      "id": 91
+    },
+    {
+      "movieId": 586047,
+      "userId": 11,
+      "id": 92
+    },
+    {
+      "movieId": 823855,
+      "userId": 11,
+      "id": 93
+    },
+    {
+      "movieId": 717192,
+      "userId": 11,
+      "id": 94
+    },
+    {
+      "movieId": 615457,
+      "userId": 11,
+      "id": 95
+    },
+    {
+      "movieId": 460465,
+      "userId": 11,
+      "id": 96
+    },
+    {
+      "movieId": 578701,
+      "userId": 11,
+      "id": 97
+    },
+    {
+      "userId": 5,
+      "movieId": 567189,
+      "id": 98
+    },
+    {
+      "userId": 5,
+      "movieId": 804435,
+      "id": 99
+    },
+    {
+      "userId": 5,
+      "movieId": 615457,
+      "id": 100
     }
   ],
   "genres": [

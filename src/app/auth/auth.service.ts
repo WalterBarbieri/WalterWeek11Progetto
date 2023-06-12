@@ -56,7 +56,7 @@ export class AuthService {
     this.autoLogOut(userData)
   }
 
-  signUp(data: {nome: string, cognome: string, email: string, password: string}) {
+  signUp(data: {nome: string, email: string, password: string}) {
     return this.http.post(`${this.baseURL}register`, data)
   }
 
