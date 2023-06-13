@@ -1,6 +1,6 @@
 
 <div id="contenitore">
-  <div *ngIf="user; else loginComponent" class="d-flex">
+  <div *ngIf="user; else loginComponent" class="d-flex" id="sottoContenitore">
     <app-navbar></app-navbar>
     <router-outlet *ngIf="user"></router-outlet>
   </div>

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Movie } from '../models/movie.interface';
 import { Favourite } from '../models/favourite.interface';
+import { Genre } from '../models/genre.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +32,9 @@ export class MovieService {
 
   recuperaMovie(id: number){
     return this.http.get<Movie>(`${this.baseURL}movies-popular/${id}`);
+  }
+  recuperaGenere() {
+    return this.http.get<Genre[]>(`${this.baseURL}genres`)
   }
 
 }

@@ -12,6 +12,10 @@ import { catchError, of } from 'rxjs';
 })
 export class RegisterComponent implements OnInit {
 
+  error!: string;
+
+  showAlert = true;
+
   constructor(private authSrv: AuthService, private router: Router) { }
 
   ngOnInit(): void {
@@ -23,7 +27,7 @@ export class RegisterComponent implements OnInit {
     this.authSrv.signUp(form.value).pipe(
       catchError(error => {
         console.error(error);
-        alert('Registrazione fallita');
+        this.error = error;
         form.reset();
         return of(null);
       })
@@ -37,6 +41,12 @@ export class RegisterComponent implements OnInit {
 
   redirectToLogin() {
     this.router.navigate(['/login']);
+  }
+
+  chiudiAlert(){
+    this.showAlert = false;
+    this.error = '';
+    this.showAlert = true;
   }
 
 }

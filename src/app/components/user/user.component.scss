@@ -3,9 +3,7 @@
 }
 
 #cardContainer {
-  background-image: url(../../../assets/netflix-sfondo.jpg.webp);
-  background-size: contain;
-  background-repeat: repeat-y;
+  background-color: rgb(12 10 10);
   color: red;
   margin: 0;
   width: 100%;
@@ -25,4 +23,12 @@
 }
 #userCard {
   cursor: pointer;
+}
+button {
+  background-color: red;
+}
+
+button:hover {
+  scale: 1.2;
+  transition: all 1s;
 }

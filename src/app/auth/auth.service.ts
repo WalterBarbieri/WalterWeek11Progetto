@@ -36,7 +36,7 @@ export class AuthService {
         localStorage.setItem('user', JSON.stringify(data));
         this.autoLogOut(data);
       }),
-      catchError(this.errors)
+      catchError((err) => this.errors(err))
     );
   }
 
@@ -53,43 +53,50 @@ export class AuthService {
 
     this.authSubj.next(userData);
 
-    this.autoLogOut(userData)
+    this.autoLogOut(userData);
   }
 
-  signUp(data: {nome: string, email: string, password: string}) {
-    return this.http.post(`${this.baseURL}register`, data)
+  signUp(data: { nome: string; email: string; password: string }) {
+    return this.http
+      .post(`${this.baseURL}register`, data)
+      .pipe(catchError((err) => this.errors(err)));
   }
 
   logOut() {
     this.authSubj.next(null);
     localStorage.removeItem('user');
-    this.router.navigate(['/'])
+    this.router.navigate(['/']);
 
     if (this.timeOutLogout) {
-      clearTimeout(this.timeOutLogout)
+      clearTimeout(this.timeOutLogout);
     }
   }
 
   autoLogOut(data: AuthData) {
-    const expirationDate = this.jvtHelper.getTokenExpirationDate(data.accessToken) as Date;
-    const expirationMillisecond = expirationDate.getTime() - new Date().getTime();
+    const expirationDate = this.jvtHelper.getTokenExpirationDate(
+      data.accessToken
+    ) as Date;
+    const expirationMillisecond =
+      expirationDate.getTime() - new Date().getTime();
     this.timeOutLogout = setTimeout(() => {
-      this.logOut()
-    }, expirationMillisecond)
+      this.logOut();
+    }, expirationMillisecond);
   }
 
   private errors(err: any) {
     switch (err.error) {
-      case 'Email already exist':
-        return throwError('Utente già presente');
-        break;
-        case 'Email format is invalid':
-          return throwError('Format email non valido');
-          break;
-          default:
-          return throwError('Errore nella chiamata')
+      case 'Email already exists':
+        return throwError('Email già presente');
+      case 'Email format is invalid':
+        return throwError('Format email non valido');
+      case 'Incorrect password':
+        return throwError('Password errata');
+      case 'Password is too short':
+        return throwError('Password errata');
+      case 'Cannot find user':
+        return throwError('Utente inesistente');
+      default:
+        return throwError('Errore nella chiamata');
     }
   }
-
 }
-

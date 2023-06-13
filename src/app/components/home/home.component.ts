@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { MovieService } from 'src/app/service/movie.service';
 import { Favourite } from 'src/app/models/favourite.interface';
+import { Genre } from 'src/app/models/genre.interface';
 
 @Component({
   selector: 'app-home',
@@ -19,6 +20,8 @@ export class HomeComponent implements OnInit {
   favMovie!: Favourite | null;
   myFavMov: Favourite[] | undefined;
   favSub!: Subscription;
+  genreSub!: Subscription;
+  genres!: Genre[] | undefined;
 
   constructor(private authSrv: AuthService, private movieSrv: MovieService) {}
 
@@ -28,36 +31,46 @@ export class HomeComponent implements OnInit {
     });
     this.sub = this.movieSrv.recupera().subscribe((movies: Movie[]) => {
       this.movies = movies;
-      console.log(this.movies);
     });
 
     this.favSub = this.movieSrv
       .recuperaFav(this.user?.user?.id!)
       .subscribe((myFavMov: Favourite[]) => {
         this.myFavMov = myFavMov;
-        console.log(this.myFavMov);
+      });
+
+    this.genreSub = this.movieSrv
+      .recuperaGenere()
+      .subscribe((genere: Genre[]) => {
+        this.genres = genere;
       });
   }
 
   likeIt(movieId: number, userId: number) {
     const alreadyLiked = this.movieLiked(movieId);
-    const favMovieId = this.myFavMov?.find((fav) => fav.movieId === movieId)?.id;
+    const favMovieId = this.myFavMov?.find(
+      (fav) => fav.movieId === movieId
+    )?.id;
     this.favMovie = {
       movieId: movieId,
       userId: userId,
-      id: favMovieId
+      id: favMovieId,
     };
 
     if (alreadyLiked) {
       if (this.favMovie.id !== undefined) {
         this.movieSrv.eliminaFav(this.favMovie.id).subscribe(() => {
-          this.myFavMov = this.myFavMov?.filter(fav => fav.movieId !== movieId);
+          this.myFavMov = this.myFavMov?.filter(
+            (fav) => fav.movieId !== movieId
+          );
         });
       }
     } else {
-      this.movieSrv.miPiace(this.favMovie).subscribe((newFavMovie: Favourite) => {
-        this.myFavMov?.push(newFavMovie);
-      });
+      this.movieSrv
+        .miPiace(this.favMovie)
+        .subscribe((newFavMovie: Favourite) => {
+          this.myFavMov?.push(newFavMovie);
+        });
     }
   }
 

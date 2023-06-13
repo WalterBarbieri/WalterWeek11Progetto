@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthData } from 'src/app/auth/auth.interface';
 import { AuthService } from 'src/app/auth/auth.service';
-import { Subscription, forkJoin } from 'rxjs';
+import { Subscription, forkJoin, findIndex} from 'rxjs';
 import { Favourite } from 'src/app/models/favourite.interface';
 import { MovieService } from 'src/app/service/movie.service';
 import { Movie } from 'src/app/models/movie.interface';
@@ -16,7 +16,7 @@ export class UserComponent implements OnInit {
 
   user!: AuthData | null;
   sub!: Subscription;
-  myFavMov: Favourite[] | undefined;
+  myFavMov: Favourite[] = [];
   movies!: Movie[] | undefined;
   favMovies: Movie[] = [];
 
@@ -36,7 +36,6 @@ export class UserComponent implements OnInit {
         this.favMovies = movies.filter((movie) =>
           this.myFavMov?.some((fav) => fav.movieId === movie.id)
         );
-        console.log(this.favMovies);
       }
     );
 
@@ -44,8 +43,17 @@ export class UserComponent implements OnInit {
       .recuperaFav(this.user?.user?.id!)
       .subscribe((myFavMov: Favourite[]) => {
         this.myFavMov = myFavMov;
-        console.log(this.myFavMov);
       });
+  }
+
+  rimuoviFav(favMovieId: number) {
+    const index = this.myFavMov?.findIndex(fav => fav.movieId === favMovieId);
+    if (index !== undefined && index !== -1) {
+      const movieId = this.myFavMov[index].id;
+      this.movieSrv.eliminaFav(movieId!).subscribe(() => {
+        this.favMovies = this.favMovies?.filter(fav => fav.id !== favMovieId);
+      });
+    }
   }
 
 }

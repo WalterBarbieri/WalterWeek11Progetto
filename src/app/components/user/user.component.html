@@ -7,7 +7,7 @@
     </div>
     <div class="row">
       <div class="col-2" *ngFor="let movie of favMovies">
-        <div class="card border-0 bg-black mb-3" [routerLink]="['/detail', (movie.id)]" id="userCard">
+        <div class="card border-0 bg-black mb-1" [routerLink]="['/detail', (movie.id)]" id="userCard">
           <div class="card-title p-1 text-center">
             <h5>{{movie.title}}</h5>
           </div>
@@ -16,6 +16,9 @@
               alt="{{movie.title}}">
           </div>
         </div>
+        <button type="button" class="p-1 px-2 rounded-circle mb-2" (click)="rimuoviFav(movie.id)">
+          <img src="../../../assets/trash-fill.svg" alt="trash icon">
+        </button>
       </div>
     </div>
   </div>

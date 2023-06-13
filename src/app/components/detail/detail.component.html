@@ -1,22 +1,33 @@
-<div>
+<div *ngIf="movie">
   <div id="imageContainer" class="position-relative w-100 h-100">
-    <img class="w-100" src="https://image.tmdb.org/t/p/w500{{movie.backdrop_path}}" alt="{{movie.title}}">
+    <img class="w-100" [src]="getBackdropUrl()" alt="{{movie.title}}">
   </div>
-  <div class="position-absolute bottom-0 p-4" id="detailInfo">
-    <h1>{{movie.title}}</h1>
-    <h2>{{movie.release_date}}</h2>
-    <h4>Categoria: <img *ngIf="movie.adult == true" src="../../../assets/emoji-frown-fill.svg" alt="frown face icon"> <img *ngIf="movie.adult == false" src="../../../assets/emoji-smile-fill.svg" alt="frown face icon"></h4>
-    <h2>Sinossi:</h2>
-    <p>{{movie.overview}}</p>
-    <div class="d-flex">
-      <h6>Voto: {{movie.vote_average}}.&nbsp;</h6>
-      <h6>Numero Voti: {{movie.vote_count}}.&nbsp;</h6>
-      <h6>Like: {{movie.popularity}}.</h6>
+  <div class="row position-absolute bottom-0 p-4" id="detailInfo">
+    <div class="col-6">
+      <h1>{{movie.title}}</h1>
+      <h2>{{movie.release_date}}</h2>
+      <h4>Categoria: <img *ngIf="movie.adult == true" src="../../../assets/emoji-frown-fill.svg" alt="frown face icon">
+        <img *ngIf="movie.adult == false" src="../../../assets/emoji-smile-fill.svg" alt="frown face icon"></h4>
+      <div *ngIf="genres && movie.genre_ids" class="d-flex">
+        <h6>Generi:&nbsp; </h6>
+        <ng-container *ngFor="let genreId of movie.genre_ids">
+          <h6>{{ getGenreName(genreId) }}&nbsp;</h6>
+        </ng-container>
+      </div>
+      <h2>Sinossi:</h2>
+      <p>{{movie.overview}}</p>
+      <div class="d-flex">
+        <h6>Voto: {{movie.vote_average}}.&nbsp;</h6>
+        <h6>Numero Voti: {{movie.vote_count}}.&nbsp;</h6>
+        <h6>Like: {{movie.popularity}}.</h6>
+      </div>
+      <div class="d-flex">
+        <h6>Lingua originale: {{movie.original_language}}.&nbsp;</h6>
+        <h6>Titolo originale: {{movie.original_title}}.</h6>
+      </div>
     </div>
-    <div class="d-flex">
-      <h6>Lingua originale: {{movie.original_language}}.&nbsp;</h6>
-      <h6>Titolo originale: {{movie.original_title}}.</h6>
+    <div class="col-6">
+      <iframe width="100%" height="100%" [src]="getVideoUrl()" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
   </div>
-<div>
-
+  <div>

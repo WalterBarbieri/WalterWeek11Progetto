@@ -1,15 +1,42 @@
 <div class="row p-5" id="cardContainer">
+  <div>
+    <select name="genereSelect" id="genereSelect" class="position-absolute top-0 z-1 form-select"
+      aria-label="Genere Select">
+      <option selected>Tutti i Generi</option>
+      <option value="Animazione">Animazione</option>
+      <option value="Avventura">Avventura</option>
+      <option value="Azione">Azione</option>
+      <option value="Commedia">Commedia</option>
+      <option value="Crime">Crime</option>
+      <option value="Documentario">Documentario</option>
+      <option value="Dramma">Dramma</option>
+      <option value="Famiglia">Famiglia</option>
+      <option value="Fantasy">Fantasy</option>
+      <option value="Fantascienza">Fantascienza</option>
+      <option value="Guerra">Guerra</option>
+      <option value="Horror">Horror</option>
+      <option value="Mistero">Mistero</option>
+      <option value="Musica">Musica</option>
+      <option value="Romance">Romance</option>
+      <option value="Storia">Storia</option>
+      <option value="Televisione">Televisione</option>
+      <option value="Thriller">Thriller</option>
+      <option value="Western">Western</option>
+    </select>
+  </div>
   <div class="col-3" *ngFor="let movie of movies">
     <div class="card mb-4">
       <a [routerLink]="['/detail', (movie.id)]">
-      <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="card-img-top" alt="{{movie.title}}">
-    </a>
+        <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="card-img-top" alt="{{movie.title}}">
+      </a>
       <div class="card-body">
         <a [routerLink]="['/detail', (movie.id)]" id="homeTitle">
-        <h3 class="card-title text-center">{{movie.title}}</h3>
-      </a>
+          <h3 class="card-title text-center">{{movie.title}}</h3>
+        </a>
         <div class="card-text d-flex justify-content-between align-items-center">
-          <a (click)="likeIt(movie.id, user?.user?.id!)" id="heartIcon"><img [src]="movieLiked(movie.id) ? '../../../assets/heart-fill-red.svg' : '../../../assets/heart-fill.svg'" alt="heart icon"></a>
+          <a (click)="likeIt(movie.id, user?.user?.id!)" id="heartIcon"><img
+              [src]="movieLiked(movie.id) ? '../../../assets/heart-fill-red.svg' : '../../../assets/heart-fill.svg'"
+              alt="heart icon"></a>
           <div class="text-end">
             <p>Voto: {{movie.vote_average}}</p>
             <p>N. Voti: {{movie.vote_count}}</p>

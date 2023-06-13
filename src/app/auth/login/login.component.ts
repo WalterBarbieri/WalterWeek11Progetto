@@ -13,6 +13,10 @@ import { catchError, of } from 'rxjs';
 })
 export class LoginComponent implements OnInit {
 
+  error!: string;
+
+  showAlert = true;
+
   constructor(private authSrv: AuthService, private router: Router) { }
 
   ngOnInit(): void {
@@ -24,7 +28,7 @@ export class LoginComponent implements OnInit {
     this.authSrv.login(form.value).pipe(
       catchError(error => {
         console.error(error);
-        alert('Login Fallito');
+        this.error = error;
         form.reset();
         return of(null);
       })
@@ -37,6 +41,12 @@ export class LoginComponent implements OnInit {
   }
   redirectToRegister() {
     this.router.navigate(['/register']);
+  }
+
+  chiudiAlert(){
+    this.showAlert = false;
+    this.error = '';
+    this.showAlert = true;
   }
 
 }

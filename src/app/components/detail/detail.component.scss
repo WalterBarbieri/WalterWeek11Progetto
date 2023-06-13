@@ -9,8 +9,11 @@
 */
 #detailInfo {
   color: red;
-  background-color: black;
-  opacity: 0.85;
+  background: linear-gradient(359deg, black 60%, transparent);
   width: 85%;
   margin-left: 3em;
+  border-radius: 10px;
+}
+iframe {
+  border-radius: 10px;
 }

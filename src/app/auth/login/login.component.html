@@ -18,3 +18,9 @@
     </div>
   </div>
 </div>
+<div *ngIf="error">
+  <div class="alert alert-danger d-flex justify-content-between" role="alert" *ngIf="showAlert">
+    <span> {{error}} </span>
+    <button type="button" class="btn-close" aria-label="Close" (click)="chiudiAlert()"></button>
+  </div>
+</div>

@@ -4,9 +4,7 @@
   text-overflow: ellipsis;
 }
 #cardContainer {
-  background-image: url(../../../assets/netflix-sfondo.jpg.webp);
-  background-size: contain;
-  background-repeat: repeat-y;
+  background-color: rgb(12 10 10);
 }
 .card {
   background-color: black;
@@ -19,5 +17,15 @@
 }
 #heartIcon {
   cursor: pointer;
+}
+select {
+  width: fit-content;
+  background-color: black;
+  color: gray;
+  border: none;
+}
+
+option:checked {
+  color: red;
 }
 

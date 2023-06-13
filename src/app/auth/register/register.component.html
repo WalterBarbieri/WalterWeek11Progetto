@@ -8,15 +8,24 @@
         <label for="name">Nome</label>
         <input type="name" name="name" id="name" class="form-control" required ngModel>
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" class="form-control" required ngModel>
+        <input type="email" name="email" id="email" class="form-control" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required ngModel>
         <label for="password">Password</label>
-        <input type="password" name="password" id="password" class="form-control" required ngModel>
+        <input type="password" name="password" id="password" #password="ngModel" class="form-control" minlength="5" maxlength="12" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).+$" required ngModel>
+        <div *ngIf="password.invalid && (password.dirty || password.touched)">
+          La password deve contenere almeno una lettera minuscola, una lettera maiuscola, un numero e un carattere speciale.
+        </div>
         <div class="d-flex justify-content-between align-items-center">
           <button type="submit" class="btn mt-2" [disabled]="form.invalid">Signup</button>
           <a class="d-flex justify-content-center curs" (click)="redirectToLogin()">Hai già un account? Accedi</a>
         </div>
       </form>
     </div>
+  </div>
+</div>
+<div *ngIf="error">
+  <div class="alert alert-danger d-flex justify-content-between" role="alert" *ngIf="showAlert">
+    <span> {{error}} </span>
+    <button type="button" class="btn-close" aria-label="Close" (click)="chiudiAlert()"></button>
   </div>
 </div>
 
