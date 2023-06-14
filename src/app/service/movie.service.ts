@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { Movie } from '../models/movie.interface';
 import { Favourite } from '../models/favourite.interface';
 import { Genre } from '../models/genre.interface';
+import { User } from '../models/user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +36,14 @@ export class MovieService {
   }
   recuperaGenere() {
     return this.http.get<Genre[]>(`${this.baseURL}genres`)
+  }
+
+  recuperaUser(id: number){
+    return this.http.get<User>(`${this.baseURL}users/${id}`)
+  }
+
+  modificaUser(user: User, id: number) {
+    return this.http.put<User>(`${this.baseURL}users/${id}`, user)
   }
 
 }

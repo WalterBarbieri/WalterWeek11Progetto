@@ -1,7 +1,6 @@
 <div class="row p-5" id="cardContainer">
   <div>
-    <select name="genereSelect" id="genereSelect" class="position-absolute top-0 z-1 form-select"
-      aria-label="Genere Select">
+    <select name="genereSelect" id="genereSelect" class="position-absolute top-0 z-1 form-select" aria-label="Genere Select" (change)="onGenreChange($event)">
       <option selected>Tutti i Generi</option>
       <option value="Animazione">Animazione</option>
       <option value="Avventura">Avventura</option>
@@ -24,7 +23,7 @@
       <option value="Western">Western</option>
     </select>
   </div>
-  <div class="col-3" *ngFor="let movie of movies">
+  <div class="col-3" *ngFor="let movie of filteredMovies">
     <div class="card mb-4">
       <a [routerLink]="['/detail', (movie.id)]">
         <img src="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" class="card-img-top" alt="{{movie.title}}">

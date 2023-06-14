@@ -24,11 +24,24 @@
 #userCard {
   cursor: pointer;
 }
-button {
-  background-color: red;
+
+#modifyBtn {
+  padding: 0 0.6em;
 }
 
+#modal {
+  color: red;
+}
+button {
+  color: black;
+  background-color: red;
+}
+button:disabled {
+  background-color: rgb(247, 57, 57);
+  color: black;
+}
 button:hover {
-  scale: 1.2;
-  transition: all 1s;
+  background-color: red;
+  color: black;
+  box-shadow: 1px 1px 5px gray ;
 }

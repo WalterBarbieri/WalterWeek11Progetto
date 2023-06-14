@@ -21,6 +21,11 @@ button:disabled {
   background-color: rgb(247, 57, 57);
   color: black;
 }
+button:hover {
+  background-color: red;
+  color: black;
+  box-shadow: 1px 1px 5px gray ;
+}
 a {
   color: red;
 }

@@ -16,12 +16,14 @@ import { Genre } from 'src/app/models/genre.interface';
 export class HomeComponent implements OnInit {
   sub!: Subscription;
   user!: AuthData | null;
-  movies: Movie[] | undefined;
+  movies: Movie[] = [];
   favMovie!: Favourite | null;
   myFavMov: Favourite[] | undefined;
   favSub!: Subscription;
   genreSub!: Subscription;
   genres!: Genre[] | undefined;
+  selectedGenre: string = 'Tutti i Generi';
+  filteredMovies!: Movie[] | undefined;
 
   constructor(private authSrv: AuthService, private movieSrv: MovieService) {}
 
@@ -31,6 +33,7 @@ export class HomeComponent implements OnInit {
     });
     this.sub = this.movieSrv.recupera().subscribe((movies: Movie[]) => {
       this.movies = movies;
+      this.filterMoviesByGenre();
     });
 
     this.favSub = this.movieSrv
@@ -85,5 +88,26 @@ export class HomeComponent implements OnInit {
     if (this.favSub) {
       this.favSub.unsubscribe();
     }
+  }
+
+  onGenreChange(event: Event) {
+    const target = event.target as HTMLSelectElement;
+    this.selectedGenre = target.value || 'Tutti i Generi';
+    this.filterMoviesByGenre();
+  }
+
+  filterMoviesByGenre() {
+    if (this.selectedGenre === 'Tutti i Generi') {
+      this.filteredMovies = this.movies;
+    } else {
+      this.filteredMovies = this.movies.filter(movie =>
+        movie.genre_ids.includes(this.getGenreIdByName(this.selectedGenre))
+      );
+    }
+  }
+
+  getGenreIdByName(genreName: string): number  {
+    const genre = this.genres?.find(genre => genre.name === genreName);
+    return genre?.id!
   }
 }

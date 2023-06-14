@@ -25,6 +25,11 @@ a {
 button {
   background-color: red;
 }
+button:hover {
+  background-color: red;
+  color: black;
+  box-shadow: 1px 1px 5px gray ;
+}
 #welcome {
   color: red;
   font-size: 1.2;
