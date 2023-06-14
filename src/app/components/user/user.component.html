@@ -34,7 +34,7 @@
     <div class="modal-content bg-black border-1 border-secondary" id="modal">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="staticBackdropLabel">Modifica Informazioni Personali</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="closeBtn"></button>
       </div>
       <form #form="ngForm" (submit)="modifica(form)">
         <div class="modal-body">
@@ -45,8 +45,8 @@
             pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required [(ngModel)]="emailValue">
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn" [disabled]="form.invalid" data-bs-dismiss="modal">Understood</button>
+          <button type="button" class="btn" data-bs-dismiss="modal">Chiudi</button>
+          <button type="submit" class="btn" [disabled]="form.invalid" data-bs-dismiss="modal">Modifica</button>
         </div>
       </form>
     </div>

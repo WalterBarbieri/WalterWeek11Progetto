@@ -65,6 +65,12 @@
       "name": "IvanIvan",
       "password": "$2a$10$n/dIhS.punNnGugHV5RegOlhRRxBai7hosbGIEtZ3QgCIKlgDdXEa",
       "id": 12
+    },
+    {
+      "email": "netflix@netflix.it",
+      "name": "Netflix1",
+      "password": "$2a$10$WTRPaiIrx4Z3Ciqdgu/eFemqlydQDoNvh95LB0282IAilgwDV4hUO",
+      "id": 13
     }
   ],
   "favorites": [
