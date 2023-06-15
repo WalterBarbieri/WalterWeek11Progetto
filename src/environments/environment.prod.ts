@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseURL: 'http://localhost:4201/'
+  baseURL: 'https://clonenetflix-5633e.firebaseapp.com/'
 };
