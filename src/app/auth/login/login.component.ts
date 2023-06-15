@@ -34,8 +34,8 @@ export class LoginComponent implements OnInit {
       })
     ).subscribe(response => {
       if (response) {
+        sessionStorage.setItem('isFirstLoad', 'true')
         this.router.navigate(['/']);
-        alert('Login Effettuato');
       }
     });
   }

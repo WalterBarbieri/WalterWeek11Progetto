@@ -43,6 +43,13 @@
           <label for="email">Email</label>
           <input type="email" name="email" id="email" class="form-control"
             pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required [(ngModel)]="emailValue">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" #password="ngModel" class="form-control" minlength="5"
+            maxlength="12" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).+$" required ngModel>
+          <div *ngIf="password.invalid && (password.dirty || password.touched)">
+            La password deve contenere almeno una lettera minuscola, una lettera maiuscola, un numero e un carattere
+            speciale.
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn" data-bs-dismiss="modal">Chiudi</button>

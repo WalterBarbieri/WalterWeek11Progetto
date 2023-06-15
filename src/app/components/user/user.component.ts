@@ -78,8 +78,8 @@ export class UserComponent implements OnInit {
       this.editUser = {
         email: form.value.email,
         name: form.value.name,
-        password: this.editUser?.password,
-        id: userId,
+        password: form.value.password,
+        id: userId
       };
       console.log(this.editUser);
 
@@ -91,7 +91,10 @@ export class UserComponent implements OnInit {
             if (this.user) {
               this.user.user.name = user.name;
               this.user.user.email = user.email;
+              this.authSrv.authSubj.next(this.user)
             }
+          },(error) =>{
+            console.error(error)
           });
       }
     }

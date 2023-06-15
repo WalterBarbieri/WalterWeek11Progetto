@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { MovieService } from 'src/app/service/movie.service';
 import { Favourite } from 'src/app/models/favourite.interface';
 import { Genre } from 'src/app/models/genre.interface';
+import { Howl } from 'howler';
 
 @Component({
   selector: 'app-home',
@@ -24,6 +25,10 @@ export class HomeComponent implements OnInit {
   genres!: Genre[] | undefined;
   selectedGenre: string = 'Tutti i Generi';
   filteredMovies!: Movie[] | undefined;
+  sound = new Howl({
+    src: ['../../../assets/netflixAudio.mp3']
+  });
+  isFirstLoad!: boolean;
 
   constructor(private authSrv: AuthService, private movieSrv: MovieService) {}
 
@@ -31,6 +36,18 @@ export class HomeComponent implements OnInit {
     this.authSrv.user$.subscribe((_user) => {
       this.user = _user;
     });
+
+    this.isFirstLoad = sessionStorage.getItem('isFirstLoad') === 'true';
+    if (this.isFirstLoad) {
+      this.sound.play();
+      setTimeout(() => {
+        this.isFirstLoad = false;
+      }, 4000);
+      sessionStorage.setItem('isFirstLoad', 'false');
+    }
+
+
+
     this.sub = this.movieSrv.recupera().subscribe((movies: Movie[]) => {
       this.movies = movies;
       this.filterMoviesByGenre();

@@ -15,7 +15,7 @@ export class AuthService {
 
   baseURL = environment.baseURL;
 
-  private authSubj = new BehaviorSubject<null | AuthData>(null);
+  authSubj = new BehaviorSubject<null | AuthData>(null);
 
   utente!: AuthData;
 
