@@ -29,6 +29,12 @@
       "name": "Giuseppino",
       "password": "$2a$10$q6UEJ1AIhYXhO.2AkZHUgudOnLs1sdh271t0m.2m0XTT2KiEu65qi",
       "id": 11
+    },
+    {
+      "email": "user@user.it",
+      "name": "User Super",
+      "password": "$2a$10$EqD9eIpsy/0iIwtyDUtBG.ntAKvlPtEwVJ6Tg2h/SRoypzVWqoJmG",
+      "id": 12
     }
   ],
   "favorites": [
@@ -278,14 +284,74 @@
       "id": 141
     },
     {
-      "movieId": 372058,
-      "userId": 5,
-      "id": 160
-    },
-    {
       "movieId": 556574,
       "userId": 5,
       "id": 161
+    },
+    {
+      "movieId": 460465,
+      "userId": 12,
+      "id": 162
+    },
+    {
+      "movieId": 399566,
+      "userId": 12,
+      "id": 163
+    },
+    {
+      "movieId": 578701,
+      "userId": 12,
+      "id": 164
+    },
+    {
+      "movieId": 791373,
+      "userId": 12,
+      "id": 165
+    },
+    {
+      "movieId": 811367,
+      "userId": 12,
+      "id": 166
+    },
+    {
+      "movieId": 813258,
+      "userId": 12,
+      "id": 167
+    },
+    {
+      "movieId": 724089,
+      "userId": 12,
+      "id": 168
+    },
+    {
+      "movieId": 578701,
+      "userId": 5,
+      "id": 169
+    },
+    {
+      "movieId": 804435,
+      "userId": 5,
+      "id": 170
+    },
+    {
+      "movieId": 615457,
+      "userId": 5,
+      "id": 171
+    },
+    {
+      "movieId": 460465,
+      "userId": 5,
+      "id": 172
+    },
+    {
+      "movieId": 791373,
+      "userId": 5,
+      "id": 173
+    },
+    {
+      "movieId": 726684,
+      "userId": 5,
+      "id": 174
     }
   ],
   "genres": [

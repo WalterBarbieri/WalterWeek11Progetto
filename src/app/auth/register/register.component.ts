@@ -34,7 +34,6 @@ export class RegisterComponent implements OnInit {
     ).subscribe(response => {
       if (response) {
         this.router.navigate(['/login']);
-        alert('Registrazione Effettuata con Successo!');
       }
     });
   }
